@@ -669,11 +669,10 @@
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \entrytitlestyle{#1} - \entrycompanytyle{#2} & \entrylocationstyle{#3} \\
-    \entrystackstyle{#5} & \entrydatestyle{#4} \\
-
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#6}} \\
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{2cm} L{\textwidth }}
+    \entrylocationstyle{#3} & \entrytitlestyle{#1} - \entrycompanytyle{#2}  \\
+    \entrydatestyle{#4} & \entrystackstyle{#5}  \\
+    test & \descriptionstyle{#6} \\
   \end{tabular*}%
 }
 
