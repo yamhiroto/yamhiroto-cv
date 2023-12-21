@@ -1,0 +1,144 @@
+\documentclass[a4paper]{article}
+\usepackage{tabularx}
+\usepackage{ae}
+\usepackage{bold-extra}
+\usepackage{CV}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+\usepackage[left=1cm,top=1cm,right=1cm,	bottom=1cm,nohead,nofoot]{geometry}
+\title{My	Resume}
+\begin{document}
+\pagestyle{empty}
+\begin{center}
+\Huge
+\textsc{Hiroto Yamakawa}
+\end{center}
+
+\begin{center}
+
+\textsc{Phone:	+33623915320 (FR) \ \ }
+\textsc{Email:}	\textbf{\href{yam.hiroto@gmail.com}{yam.hiroto@gmail.com}}\ \ 
+
+\\\textsc{Address:} 1xx rue de Lourmel, 75015 Paris, France 
+%\\\textbf{\href{https://hiroyamakawa.com}{Website}}\ \ \ \ \
+\\\
+\textbf{\href{https://www.linkedin.com/in/yamakawahiroto/}{Linkedin}}\ \ \ \ \ \textbf{\href{https://www.github.com/yamhiroto/}{Github}}\
+\end{center}
+
+
+\section{Objective}
+
+\noindent
+Data Engineer with Machine Learning knowledge and previous work experience in project management. I worked abroad for 4 years and I thrive in international environments. I am looking for a full-time position in an international company that would allow me to work on data-intensive systems and will provide me with opportunities to grow as a Data Engineer.
+%For more information about me : 
+%\textbf{\href{https://hiroyamakawa.com}{https://hiroyamakawa.com}}
+
+
+\section{Work Experience}
+\noindent
+\begin{tabular}{p{1.5cm}|p{20cm}}
+\emph{Current}	&	\large{\textbf{Data Engineer - \emph{Lydia Solutions}}}, \normalsize{\emph{Fintech - Mobile Banking}}	\hspace{46mm} Paris	\\
+\emph{Jan   2021}
+& - \emph{Maintained Warehouse \& database,  automated workflows with Airflow} \\
+& - \emph{Developed Batch Data Pipelines to store, transform and serve data to the other departments} \\
+& - \emph{Developed handlers to extract data from Rest API (e.g. Slack, AppsFlyer, Braze, NiceReply)} \\
+& - \emph{Reduced technical debt by rewriting some data processing from Pandas to full SQL} \\
+& - \emph{Designed and implemented a Data Model now used daily by the Sales to track conversions} \\
+& - \emph{Designed and implemented a Data Model to help the Fraud team be more effective} \\
+& \emph{\textbf{Techn. used}: Python, SQL, BigQuery, Airflow, GCP, MariaDB, Metabase} 
+\end{tabular}\\
+\\\\
+\noindent
+\begin{tabular}{p{1.5cm}|p{20cm}}
+\emph{Dec	2020}	&	\large{\textbf{Data Scientist - \emph{Winglet.io}}}, \normalsize{\emph{Travel - Air Transport}}	\hspace{62mm} Paris	\\
+\emph{Jul   2020}
+& - \emph{Implemented additional Spark Jobs to process terabytes of Data with clusters on Azure} \\
+&  - \emph{Developed a machine learning model to better predict the validity period of an offer } \\
+& \emph{\textbf{Techn. used}: Python, Tableau, Spark (Scala), BigQuery (SQL), Databricks, Azure} 
+\end{tabular}\\
+\\\\
+\noindent
+\begin{tabular}{p{1.5cm}|p{20cm}}
+\emph{Aug	2019}	&	\textbf{Consulting - Assistant Project Manager - \emph{Artelia UK}}, \emph{Construction}	\hspace{36mm} London	\\
+\emph{Apr   2017}	&  \emph{Clients: Whitbread (Premier Inn), Accor, Hilton} 
+\end{tabular}\\
+
+\noindent
+\begin{tabular}{p{1.5cm}|p{20cm}}
+\emph{Mar	2017}	&	\textbf{Project Coordinator - \emph{Artelia Vietnam}, \emph{Archetype Cambodia}}, \emph{Construction}	\hspace{23mm}  S.E-Asia	\\
+\emph{Jan	2016}	&	\emph{3 months in Phnom Penh (Cambodia), 1 year in Saigon-HCMC (Vietnam)} \\
+\end{tabular}
+
+
+\section{Portfolio - Other Relevant Projects }
+
+
+\noindent
+\begin{tabular}{p{1.55cm}|p{20cm}}
+\emph{Jun 2020}	&	\textbf{Vaccination appointment slot finder} - Personal Project  \hspace{61mm} \href{https://github.com/yamhiroto/selenium_vaccin}{[\textbf{GIT}]}  \\
+\emph{Nov   2019} & \emph{Web Scraping : Script written using Selenium to find available slots on Doctolib.com for my relatives} 
+
+\setlength\itemsep{0em} 
+\emph{\textbf{Stack used}: Python, Jupyter Notebook, Selenium}
+\end{tabular}\\\\
+
+\noindent
+\begin{tabular}{p{1.55cm}|p{20cm}}
+\emph{Jan 2020}	& \textbf{Distributed Data Infrastructure for large scale exploration} - Telecom Paris \hspace{25mm} \href{https://github.com/yamhiroto/NOSQL-GDELT}{[\textbf{GIT}]}  \\
+& \emph{Data Engineering - Set up an infrastructure to exploit the GDELT dataset} 
+
+\setlength\itemsep{0em} 
+\emph{\textbf{Stack used}: Spark Scala, Zeppelin, CASSANDRA, AWS (EC2,EMR,S3), Docker}
+\end{tabular}\\
+
+\section{Education}
+
+
+\noindent
+\begin{tabular}{p{1.5cm}|p{20cm}}
+\emph{Dec 2020}	&	\textbf{Msc Degree in Big Data and Machine Learning- Telecom Paris}, France   \hspace{30mm} Paris \\
+\emph{Sep	2019} & \emph{Courses : BigData Frameworks, NoSQL, Machine Learning, Deep Learning  \textbf{\href{https://www.telecom-paris.fr/en/post-masters-degree/all-post-masters-degree/post-masters-degree-in-big-data}{[link]}}}\\
+\end{tabular}\\
+
+
+\noindent
+\begin{tabular}{p{1.5cm}|p{20cm}}
+\emph{Oct	2016}	&	\textbf{Msc Degree in Civil Engineering (Dipl\^ome d'Ing\'enieur)	- ESTP Paris}, France \hspace{18mm} Paris  \\
+ \emph{Sep	2013} & \emph{Semester Study Abroad in Hanoi from Aug 2015 to Jan 2016, Vietnam}    \\
+
+
+\end{tabular}\\
+
+\noindent
+\begin{tabular}{p{1.5cm}|p{20cm}}
+\emph{Aug	2013}	&	\textbf{Bsc Degree in Mathematics \& Applied Physics - ESTP Paris}, France  \hspace{29mm}  Versailles	 \\
+ \emph{Sep	2010} & \emph{Higher School Preparatory classes : Scientific CPGE - PCSI \& PSI} \\
+
+\end{tabular}
+
+
+
+\section{Skills}
+
+
+\noindent
+\begin{tabular}{p{2.2cm}|p{20cm}}
+\textsc{\emph{Tech Stack}}	& \textbf{Programming Language} : \emph{Python, SQL} - \textbf{Cloud Provider}: \emph{AWS, GCP, AZURE} \\ 
+
+\setlength\itemsep{0em} 
+& \textbf{Frameworks \& Tools} : \emph{Spark (Scala), Scikit-Learn, Jupyter, Docker, Bigquery, Airflow} \\
+
+\noindent
+\textsc{\emph{Languages}} & \textit{Native}:	\textbf{French} ; \ \ 	\textit{Fluent}:	\textbf{English,	Japanese} ; \ \  \textit{Intermediate}: German
+\end{tabular}\\
+
+
+
+
+\end{document}
