@@ -14,6 +14,6 @@ coverletter.pdf: $(CV_DIR)/coverletter.tex
 	$(CC) -output-directory=$(OUTPUT_DIR) $<
 
 clean:
-	rm -rf $(OUTPUT_DIR)/*.{pdf,fls,log,aux,fdb_latexmk}
-	rm -rf $(CV_DIR)/*.{pdf,fls,log,aux,fdb_latexmk}
+	rm -rf $(OUTPUT_DIR)/*.{pdf,fls,log,aux,fdb_latexmk,xdv,gz}
+	rm -rf $(CV_DIR)/*.{pdf,fls,log,aux,fdb_latexmk,xdv,gz}
 

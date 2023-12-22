@@ -187,7 +187,8 @@
 
 % For elements of entry
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{12pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrycompanytyle}[1]{{\fontsize{10.5pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\entrycompanytyle}[1]{{\fontsize{12pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\entrycompanydetailstyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\color{graytext} #1}}
 \newcommand*{\entryteamsizestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{9.5pt}{0.5em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{9.5pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
@@ -197,7 +198,7 @@
 
 % For elements of skill
 \newcommand*{\skilltypestyle}[1]{{\fontsize{9.5}{1em}\bodyfontlight\slshape\color{darktext} #1}}
-\newcommand*{\skillsetstyle}[1]{{\fontsize{10.5pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\skillsetstyle}[1]{{\fontsize{10.5pt}{1em}\bodyfontlight\color{darktext} #1}}
 
 
 % For elements of education
@@ -673,19 +674,20 @@
   \end{center}
 }
 % Define an entry of cv information
-% Usage: \cventry{<title>}{<companie>}{<Location>}{<beginDate>}{<endDate>}{<Teamsize>}{<stack>}{<taskdescription>}
-\newcommand*{\cventry}[8]{%
+% Usage: \cventry{<title>}{<companie>}{<companydetail>}{<Location>}{<beginDate>}{<endDate>}{<Teamsize>}{<stack>}{<taskdescription>}
+\newcommand*{\cventry}[9]{%
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{ L{1.7cm}  L{\textwidth-4cm} R{2cm}  }
-    \ifstrempty{#5}
-    {\entrydatestyle{#4} & \entrytitlestyle{#1} - \entrycompanytyle{#2} & \entrylocationstyle{#3} \\
-    & \descriptionstyle{#6} \\}
-    {\entrydatestyle{#5} & \entrytitlestyle{#1} - \entrycompanytyle{#2} & \entrylocationstyle{#3} \\
-    \entrydatestyle{#4} & \entryteamsizestyle{#6} \\
-     & \descriptionstyle{#8}  \\
-     & \entrystackstyle{#7}  \\
+    \ifstrempty{#8}
+    {\entrydatestyle{#6} & \entrytitlestyle{#1} · \entrycompanytyle{#2} - \entrycompanydetailstyle{#3} & \entrylocationstyle{#4} \\
+    \entrydatestyle{#5} & \entryteamsizestyle{#7}\\}
+    % & \descriptionstyle{#9}  \\}
+    {\entrydatestyle{#6} & \entrytitlestyle{#1} · \entrycompanytyle{#2} - \entrycompanydetailstyle{#3} & \entrylocationstyle{#4} \\
+    \entrydatestyle{#5} & \entryteamsizestyle{#7} \\
+     & \descriptionstyle{#9}  \\
+     & \entrystackstyle{#8}  \\
     \\}
     \ifstrempty{#6&#5}
     {\entrydatestyle{#4} & \entrytitlestyle{#1} - \entrycompanytyle{#2} & \entrylocationstyle{#3}}
@@ -717,7 +719,7 @@
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{ L{1.7cm}  L{\textwidth-4cm} R{2cm}  }
+    \begin{tabular*}{\textwidth}{ L{1.7cm}  L{\textwidth-2cm} R{2cm}  }
       
 }{%
     \end{tabular*}

@@ -7,7 +7,9 @@
 - installed MacTex 
 - Latex-Workshop extension on VSCode. 
 - Updated PATH as requested in my .zshrc
-
+- Updated default recipe:
+    {"latex-workshop.latex.recipe.default": "latexmk (xelatex)"}
 #### Usage
 - Use the Recipe : **latexmk (xelatex)**
 - alternatively, Use the **Make file**
+
