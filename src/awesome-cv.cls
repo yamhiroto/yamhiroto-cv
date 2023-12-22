@@ -156,7 +156,7 @@
 
 % Awesome section color
 \def\@sectioncolor#1#2#3{%
-  \ifbool{acvSectionColorHighlight}{{\color{awesome-emerald}#1#2#3}}{#1#2#3}%
+  \ifbool{acvSectionColorHighlight}{{\color{black}#1#2#3}}{#1#2#3}%
 }
 
 
@@ -176,23 +176,36 @@
 % For fundamental structures
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{20pt}{1em}\headerfontlight\color{graytext} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{20pt}{1em}\headerfont\bfseries\color{text} #1}}
-\newcommand*{\headerpositionstyle}[1]{{\fontsize{13.6pt}{1.3em}\bodyfont\scshape\color{text} #1}}
+\newcommand*{\headerpositionstyle}[1]{{\fontsize{16pt}{1.3em}\bodyfont\scshape\color{text} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
 \newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
-\newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
+\newcommand*{\paragraphstyle}{\fontsize{10.5pt}{1.2em}\bodyfontlight\upshape\color{text}}
 
 % For elements of entry
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{12pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrycompanytyle}[1]{{\fontsize{11pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\entrydatestyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
-\newcommand*{\entrystackstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\descriptionstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\entrycompanytyle}[1]{{\fontsize{10.5pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\entryteamsizestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\entrydatestyle}[1]{{\fontsize{9.5pt}{0.5em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{9.5pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\entrystackstyle}[1]{{\fontsize{10.5pt}{1em}\bodyfont\slshape\color{graytext} #1}}
+\newcommand*{\descriptionstyle}[1]{{\fontsize{10.5pt}{1.3em}\bodyfontlight\upshape\color{text} #1}}
+
+
+% For elements of skill
+\newcommand*{\skilltypestyle}[1]{{\fontsize{9.5}{1em}\bodyfontlight\slshape\color{darktext} #1}}
+\newcommand*{\skillsetstyle}[1]{{\fontsize{10.5pt}{1em}\bodyfont\color{graytext} #1}}
+
+
+% For elements of education
+\newcommand*{\educationdatestyle}[1]{{\fontsize{9.5pt}{0.5em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\educationdegreestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\color{darktext} #1}}
+\newcommand*{\educationsubjectstyle}[1]{{\fontsize{11pt}{1em}\bodyfontlight\color{darktext} #1}}
+\newcommand*{\educationinstitutionstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\color{darktext} #1}}
+\newcommand*{\educationlocationstyle}[1]{{\fontsize{9.5pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 
 % For elements of subentry
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
@@ -208,10 +221,6 @@
 \newcommand*{\honorpositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\honordatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
-
-% For elements of skill
-\newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
 
 % For elements of the cover letter
 \newcommand*{\lettersectionstyle}[1]{{\fontsize{14pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
@@ -664,17 +673,57 @@
   \end{center}
 }
 % Define an entry of cv information
-% Usage: \cventry{<title>}{<companie>}{<stack>}{<location>}{<date>}{<description>}
-\newcommand*{\cventry}[6]{%
+% Usage: \cventry{<title>}{<companie>}{<Location>}{<beginDate>}{<endDate>}{<Teamsize>}{<stack>}{<taskdescription>}
+\newcommand*{\cventry}[8]{%
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{2cm} L{\textwidth }}
-    \entrylocationstyle{#3} & \entrytitlestyle{#1} - \entrycompanytyle{#2}  \\
-    \entrydatestyle{#4} & \entrystackstyle{#5}  \\
-    test & \descriptionstyle{#6} \\
+  \begin{tabular*}{\textwidth}{ L{1.7cm}  L{\textwidth-4cm} R{2cm}  }
+    \ifstrempty{#5}
+    {\entrydatestyle{#4} & \entrytitlestyle{#1} - \entrycompanytyle{#2} & \entrylocationstyle{#3} \\
+    & \descriptionstyle{#6} \\}
+    {\entrydatestyle{#5} & \entrytitlestyle{#1} - \entrycompanytyle{#2} & \entrylocationstyle{#3} \\
+    \entrydatestyle{#4} & \entryteamsizestyle{#6} \\
+     & \descriptionstyle{#8}  \\
+     & \entrystackstyle{#7}  \\
+    \\}
+    \ifstrempty{#6&#5}
+    {\entrydatestyle{#4} & \entrytitlestyle{#1} - \entrycompanytyle{#2} & \entrylocationstyle{#3}}
   \end{tabular*}%
 }
+
+% Define an environment for cveducation
+\newenvironment{cveducations}{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-2.0mm}
+  \begin{center}
+    \setlength\tabcolsep{0pt}
+    \setlength{\extrarowheight}{0pt}
+    \begin{tabular*}{\textwidth}{ L{1.7cm}  L{\textwidth-4cm} R{2cm}  }
+}{%
+    \end{tabular*}
+  \end{center}
+}
+% Define a line of cv information(education)
+% Usage: \cveducation{<date>}{<institution>}{<degree>}{<location>}
+\newcommand*{\cveducation}[5]{%
+	\educationdatestyle{#1} & \educationdegreestyle{#2} - \educationsubjectstyle{#3} - \educationinstitutionstyle{#4} & \educationlocationstyle{#5} \\
+}
+
+% Define an environment for cvskill
+\newenvironment{cvskills}{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-2.0mm}
+  \begin{center}
+    \setlength\tabcolsep{0pt}
+    \setlength{\extrarowheight}{0pt}
+    \begin{tabular*}{\textwidth}{ L{1.7cm}  L{\textwidth-4cm} R{2cm}  }
+      
+}{%
+    \end{tabular*}
+  \end{center}
+}
+
 
 % Define an environment for cvsubentry
 \newenvironment{cvsubentries}{%
@@ -685,7 +734,7 @@
 % Define a subentry of cv information
 % Usage: \cvsubentry{<position>}{<title>}{<date>}{<description>}
 \newcommand*{\cvsubentry}[4]{%
-  \setlength\tabcolsep{0pt}
+  \setlength\tabcolsep{2pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm} }
     \setlength\leftskip{0.2cm}
@@ -705,7 +754,7 @@
   \vspace{\acvSectionContentTopSkip}
   \vspace{-2mm}
   \begin{center}
-    \setlength\tabcolsep{0pt}
+    \setlength\tabcolsep{2pt}
     \setlength{\extrarowheight}{0pt}
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
 }{%
@@ -718,18 +767,7 @@
   \honordatestyle{#4} & \honorpositionstyle{#1}\ifempty{#2}{}{,} \honortitlestyle{#2} & \honorlocationstyle{#3} \\
 }
 
-% Define an environment for cvskill
-\newenvironment{cvskills}{%
-  \vspace{\acvSectionContentTopSkip}
-  \vspace{-2.0mm}
-  \begin{center}
-    \setlength\tabcolsep{1ex}
-    \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.9}}}
-}{%
-    \end{tabular*}
-  \end{center}
-}
+
 % Define a line of cv information(skill)
 % Usage: \cvskill{<type>}{<skillset>}
 \newcommand*{\cvskill}[2]{%
@@ -774,7 +812,7 @@
 % Usage: \makelettertitle
 \newcommand*{\makelettertitle}{%
   \vspace{8.4mm}
-  \setlength\tabcolsep{0pt}
+  \setlength\tabcolsep{2pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
     \recipienttitlestyle{\@recipientname} & \letterdatestyle{\@letterdate}
