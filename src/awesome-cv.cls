@@ -680,15 +680,18 @@
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{ L{1.7cm}  L{\textwidth-4cm} R{2cm}  }
+    % to display experience without much details like for PM experience.
     \ifstrempty{#8}
     {\entrydatestyle{#6} & \entrytitlestyle{#1} · \entrycompanytyle{#2} - \entrycompanydetailstyle{#3} & \entrylocationstyle{#4} \\
     \entrydatestyle{#5} & \entryteamsizestyle{#7}\\}
     % & \descriptionstyle{#9}  \\}
+    % to display detailed experience
     {\entrydatestyle{#6} & \entrytitlestyle{#1} · \entrycompanytyle{#2} - \entrycompanydetailstyle{#3} & \entrylocationstyle{#4} \\
     \entrydatestyle{#5} & \entryteamsizestyle{#7} \\
      & \descriptionstyle{#9}  \\
      & \entrystackstyle{#8}  \\
     \\}
+    % to display oneliner like for education
     \ifstrempty{#6&#5}
     {\entrydatestyle{#4} & \entrytitlestyle{#1} - \entrycompanytyle{#2} & \entrylocationstyle{#3}}
   \end{tabular*}%
